@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layanan — Plan B Agency</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav id="nav" class="navbar scrolled">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">Plan<span class="b">B</span></div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="layanan.html" class="active">Layanan</a></li>
+      <li><a href="paket.html">Paket & Harga</a></li>
+      <li><a href="portofolio.html">Portofolio</a></li>
+      <li><a href="tim.html">Tim</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+
+    <a href="kontak.html" class="nav-cta">Order <i class="fa-solid fa-arrow-right"></i></a>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-glow"></div>
+
+  <div class="container page-hero-inner">
+
+    <div class="page-hero-text">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Beranda</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Layanan</span>
+      </nav>
+
+      <span class="section-eyebrow">Layanan Kami</span>
+      <h1>Empat Bidang,<br>Satu Standar Kualitas.</h1>
+      <p class="page-hero-lead">
+        Dari foto produk sampai bimbingan skripsi — semua dikerjakan oleh tim yang
+        paham bidangnya. Pilih yang kamu butuh, atau ambil paket gabungan.
+      </p>
+
+      <div class="page-hero-actions">
+        <a href="#foto" class="btn btn-primary">
+          Jelajahi Layanan <i class="fa-solid fa-arrow-down"></i>
+        </a>
+        <a href="paket.html" class="btn btn-ghost">Lihat Paket & Harga</a>
+      </div>
+    </div>
+
+    <aside class="page-hero-aside">
+      <div class="aside-card">
+        <div class="aside-card-top">
+          <div class="aside-icon"><i class="fa-solid fa-layer-group"></i></div>
+          <div>
+            <span class="aside-label">Bidang Layanan</span>
+            <span class="aside-value">4 Kategori</span>
+          </div>
+        </div>
+        <p class="aside-desc">Foto, Website, Skripsi & Karier, dan Jersey dalam satu atap.</p>
+      </div>
+
+      <div class="aside-card">
+        <div class="aside-card-top">
+          <div class="aside-icon"><i class="fa-solid fa-clock"></i></div>
+          <div>
+            <span class="aside-label">Estimasi Pengerjaan</span>
+            <span class="aside-value">3–14 hari</span>
+          </div>
+        </div>
+        <p class="aside-desc">Tergantung bidang dan tingkat kompleksitas project.</p>
+      </div>
+
+      <div class="aside-card">
+        <div class="aside-card-top">
+          <div class="aside-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+          <div>
+            <span class="aside-label">Harga Mulai</span>
+            <span class="aside-value">Rp 150rb</span>
+          </div>
+        </div>
+        <p class="aside-desc">Transparan di awal. Bisa custom sesuai budget kamu.</p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ============ QUICK NAV ============ -->
+<nav class="quick-nav" id="quickNav">
+  <div class="container quick-nav-inner">
+    <span class="quick-nav-label">Bidang</span>
+
+    <ul class="quick-nav-list" id="quickNavList">
+      <li>
+        <a href="#foto" class="is-active">
+          <i class="fa-solid fa-camera"></i> Foto & Visual
+        </a>
+      </li>
+      <li>
+        <a href="#website">
+          <i class="fa-solid fa-code"></i> Website
+        </a>
+      </li>
+      <li>
+        <a href="#skripsi">
+          <i class="fa-solid fa-graduation-cap"></i> Skripsi & Karier
+        </a>
+      </li>
+      <li>
+        <a href="#jersey">
+          <i class="fa-solid fa-shirt"></i> Jersey & Apparel
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ BIDANG 1 — FOTO & VISUAL ============ -->
+<section class="layanan-section" id="foto">
+  <div class="container">
+    <div class="layanan-layout">
+
+      <div class="layanan-info">
+        <div class="layanan-info-icon">
+          <i class="fa-solid fa-camera"></i>
+        </div>
+        <span class="section-eyebrow">Bidang 01</span>
+        <h2>Foto & Visual</h2>
+        <p>
+          Momen sekali, kenangan selamanya. Kami bantu abadikan produk, event,
+          wisuda, sampai prewedding dengan hasil yang clean dan profesional.
+        </p>
+
+        <ul class="layanan-list">
+          <li><i class="fa-solid fa-check"></i> Foto produk & katalog UMKM</li>
+          <li><i class="fa-solid fa-check"></i> Wisuda, prewedding, engagement</li>
+          <li><i class="fa-solid fa-check"></i> Event, seminar, konser</li>
+          <li><i class="fa-solid fa-check"></i> Editing & retouch profesional</li>
+          <li><i class="fa-solid fa-check"></i> Paket foto + video (opsional)</li>
+        </ul>
+
+        <div class="layanan-meta">
+          <div class="meta-item">
+            <span class="meta-label">Mulai dari</span>
+            <span class="meta-value">Rp 350rb</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Estimasi</span>
+            <span class="meta-value">3–7 hari</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Revisi</span>
+            <span class="meta-value">2x</span>
+          </div>
+        </div>
+
+        <div class="layanan-actions">
+          <a href="kontak.html" class="btn btn-primary">
+            Order Sekarang <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="portofolio.html?cat=foto" class="btn btn-ghost">Lihat Portofolio</a>
+        </div>
+      </div>
+
+      <div class="layanan-items">
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-box-open"></i></div>
+          <h3>Foto Produk</h3>
+          <p>Untuk UMKM, marketplace, dan katalog digital. Background bersih, pencahayaan konsisten.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-user-graduate"></i></div>
+          <h3>Foto Wisuda</h3>
+          <p>Indoor & outdoor. Bisa sendiri, bareng keluarga, atau sesi grup kampus.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-heart"></i></div>
+          <h3>Prewedding</h3>
+          <p>Konsep custom, lokasi bebas, editing tone sinematik. Cocok buat save the date.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-calendar-check"></i></div>
+          <h3>Event & Seminar</h3>
+          <p>Liputan penuh dari pembukaan sampai penutup. File mentah bisa diserahkan.</p>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIDANG 2 — WEBSITE ============ -->
+<section class="layanan-section layanan-section-alt" id="website">
+  <div class="container">
+    <div class="layanan-layout reverse">
+
+      <div class="layanan-info">
+        <div class="layanan-info-icon">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <span class="section-eyebrow">Bidang 02</span>
+        <h2>Website</h2>
+        <p>
+          Website bukan cuma pajangan. Kami bangun yang cepat, rapi, dan siap
+          dipakai untuk jualan, portofolio, atau profil perusahaan.
+        </p>
+
+        <ul class="layanan-list">
+          <li><i class="fa-solid fa-check"></i> Landing page & company profile</li>
+          <li><i class="fa-solid fa-check"></i> Portofolio & personal branding</li>
+          <li><i class="fa-solid fa-check"></i> Toko online sederhana</li>
+          <li><i class="fa-solid fa-check"></i> Responsive & SEO basic</li>
+          <li><i class="fa-solid fa-check"></i> Domain + hosting setup</li>
+        </ul>
+
+        <div class="layanan-meta">
+          <div class="meta-item">
+            <span class="meta-label">Mulai dari</span>
+            <span class="meta-value">Rp 1,5jt</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Estimasi</span>
+            <span class="meta-value">7–14 hari</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Revisi</span>
+            <span class="meta-value">3x</span>
+          </div>
+        </div>
+
+        <div class="layanan-actions">
+          <a href="kontak.html" class="btn btn-primary">
+            Order Sekarang <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="portofolio.html?cat=website" class="btn btn-ghost">Lihat Portofolio</a>
+        </div>
+      </div>
+
+      <div class="layanan-items">
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3>Landing Page</h3>
+          <p>Satu halaman fokus untuk konversi. Cocok buat iklan, produk baru, atau event.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-building"></i></div>
+          <h3>Company Profile</h3>
+          <p>Multi-halaman untuk profil perusahaan. Profesional, cepat, dan mudah di-update.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-user-tie"></i></div>
+          <h3>Portofolio Pribadi</h3>
+          <p>Buat freelancer, kreator, atau job seeker yang mau tampil beda.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+          <h3>Toko Online</h3>
+          <p>Katalog produk, keranjang, dan checkout sederhana. Integrasi WA untuk order cepat.</p>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIDANG 3 — SKRIPSI & KARIER ============ -->
+<section class="layanan-section" id="skripsi">
+  <div class="container">
+    <div class="layanan-layout">
+
+      <div class="layanan-info">
+        <div class="layanan-info-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <span class="section-eyebrow">Bidang 03</span>
+        <h2>Skripsi & Karier</h2>
+        <p>
+          Dua fase paling bikin pusing: lulus kuliah dan dapat kerja. Kami bantu
+          lewati keduanya dengan pendampingan yang sabar dan terstruktur.
+        </p>
+
+        <ul class="layanan-list">
+          <li><i class="fa-solid fa-check"></i> Bimbingan skripsi & tesis</li>
+          <li><i class="fa-solid fa-check"></i> Olah data SPSS, Excel, Python</li>
+          <li><i class="fa-solid fa-check"></i> CV, portofolio, LinkedIn</li>
+          <li><i class="fa-solid fa-check"></i> Simulasi & latihan interview</li>
+          <li><i class="fa-solid fa-check"></i> Konsultasi karier 1-on-1</li>
+        </ul>
+
+        <div class="layanan-meta">
+          <div class="meta-item">
+            <span class="meta-label">Mulai dari</span>
+            <span class="meta-value">Rp 250rb</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Estimasi</span>
+            <span class="meta-value">3–10 hari</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Revisi</span>
+            <span class="meta-value">2x</span>
+          </div>
+        </div>
+
+        <div class="layanan-actions">
+          <a href="kontak.html" class="btn btn-primary">
+            Order Sekarang <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="portofolio.html?cat=skripsi" class="btn btn-ghost">Lihat Portofolio</a>
+        </div>
+      </div>
+
+      <div class="layanan-items">
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-book-open"></i></div>
+          <h3>Bimbingan Skripsi</h3>
+          <p>Dari bab 1 sampai sidang. Diskusi rutin, arahan jelas, tanpa nge-judge.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-chart-simple"></i></div>
+          <h3>Olah Data</h3>
+          <p>SPSS, Excel, SmartPLS, Python. Hasil + interpretasi siap dipakai di skripsi.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-file-lines"></i></div>
+          <h3>CV & Portofolio</h3>
+          <p>CV ATS-friendly, portofolio online, dan profil LinkedIn yang menjual.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-comments"></i></div>
+          <h3>Simulasi Interview</h3>
+          <p>Latihan tanya-jawab, feedback jujur, dan tips negosiasi gaji.</p>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ BIDANG 4 — JERSEY & APPAREL ============ -->
+<section class="layanan-section layanan-section-alt" id="jersey">
+  <div class="container">
+    <div class="layanan-layout reverse">
+
+      <div class="layanan-info">
+        <div class="layanan-info-icon">
+          <i class="fa-solid fa-shirt"></i>
+        </div>
+        <span class="section-eyebrow">Bidang 04</span>
+        <h2>Jersey & Apparel</h2>
+        <p>
+          Desain jersey yang bikin tim bangga pakai. Kami bantu dari konsep,
+          desain, sampai konsultasi bahan & sablon ke produsen.
+        </p>
+
+        <ul class="layanan-list">
+          <li><i class="fa-solid fa-check"></i> Desain jersey tim & komunitas</li>
+          <li><i class="fa-solid fa-check"></i> Apparel event & kampus</li>
+          <li><i class="fa-solid fa-check"></i> Merchandise custom</li>
+          <li><i class="fa-solid fa-check"></i> Konsultasi bahan & sablon</li>
+          <li><i class="fa-solid fa-check"></i> Mockup 3D untuk preview</li>
+        </ul>
+
+        <div class="layanan-meta">
+          <div class="meta-item">
+            <span class="meta-label">Mulai dari</span>
+            <span class="meta-value">Rp 150rb</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Estimasi</span>
+            <span class="meta-value">5–10 hari</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label">Revisi</span>
+            <span class="meta-value">3x</span>
+          </div>
+        </div>
+
+        <div class="layanan-actions">
+          <a href="kontak.html" class="btn btn-primary">
+            Order Sekarang <i class="fa-solid fa-arrow-right"></i>
+          </a>
+          <a href="portofolio.html?cat=jersey" class="btn btn-ghost">Lihat Portofolio</a>
+        </div>
+      </div>
+
+      <div class="layanan-items">
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-futbol"></i></div>
+          <h3>Jersey Tim</h3>
+          <p>Futsal, basket, voli, atau sepak bola. Desain custom sesuai identitas tim.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-users"></i></div>
+          <h3>Komunitas</h3>
+          <p>Jersey komunitas, gathering, atau reuni. Bisa satuan atau borongan.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Apparel Kampus</h3>
+          <p>Jaket angkatan, kaos event, atau hoodie himpunan. Desain clean & berkelas.</p>
+        </article>
+
+        <article class="sub-card">
+          <div class="sub-icon"><i class="fa-solid fa-gift"></i></div>
+          <h3>Merchandise</h3>
+          <p>Tote bag, tumbler, lanyard, atau topi untuk brand & event kamu.</p>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CARA KERJA ============ -->
+<section class="block process-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Cara Kerja</span>
+      <h2>Simpel, Jelas, Tanpa Drama</h2>
+      <p>Empat langkah dari konsultasi sampai hasil jadi.</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-item">
+        <div class="process-num">01</div>
+        <h3>Konsultasi</h3>
+        <p>Cerita kebutuhanmu lewat WA atau form. Kami bantu tentukan paket & estimasi.</p>
+      </div>
+
+      <div class="process-item">
+        <div class="process-num">02</div>
+        <h3>Konfirmasi & DP</h3>
+        <p>Setelah deal, DP 50% untuk mulai pengerjaan. Sisanya saat project selesai.</p>
+      </div>
+
+      <div class="process-item">
+        <div class="process-num">03</div>
+        <h3>Pengerjaan</h3>
+        <p>Tim mulai kerja. Progress report tiap tahap, kamu bisa kasih feedback.</p>
+      </div>
+
+      <div class="process-item">
+        <div class="process-num">04</div>
+        <h3>Revisi & Serah Terima</h3>
+        <p>Revisi sesuai paket, lalu file final diserahkan. Beres, tanpa ribet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Bingung Pilih Bidang yang Mana?</h2>
+      <p>Cerita aja kebutuhanmu. Kami bantu arahkan ke layanan yang paling pas.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/6281234567890?text=Halo%20Plan%20B,%20saya%20mau%20konsultasi" class="btn btn-wa" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Chat via WhatsApp
+        </a>
+        <a href="paket.html" class="btn btn-ghost">Lihat Paket & Harga</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-mark">B</div>
+          <div class="logo-text">Plan<span class="b">B</span></div>
+        </a>
+        <p>Agency kreatif & akademik. Solusi ketika rencana A gagal — dan alasan kenapa rencana B jadi juara.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="layanan.html#foto">Foto & Visual</a></li>
+          <li><a href="layanan.html#website">Website</a></li>
+          <li><a href="layanan.html#skripsi">Skripsi & Karier</a></li>
+          <li><a href="layanan.html#jersey">Jersey & Apparel</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Perusahaan</h4>
+        <ul>
+          <li><a href="tim.html">Tentang Tim</a></li>
+          <li><a href="portofolio.html">Portofolio</a></li>
+          <li><a href="paket.html">Paket & Harga</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li><a href="mailto:hello@planb.agency">hello@planb.agency</a></li>
+          <li><a href="https://wa.me/6281234567890">+62 812-3456-7890</a></li>
+          <li><a href="#">Jakarta, Indonesia</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2025 Plan B Agency. All rights reserved.</div>
+      <div>Dibuat dengan teliti. Bukan dengan template.</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/6281234567890?text=Halo%20Plan%20B" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paket & Harga — Plan B Agency</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav id="nav" class="navbar scrolled">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">Plan<span class="b">B</span></div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="layanan.html">Layanan</a></li>
+      <li><a href="paket.html" class="active">Paket & Harga</a></li>
+      <li><a href="portofolio.html">Portofolio</a></li>
+      <li><a href="tim.html">Tim</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+
+    <a href="kontak.html" class="nav-cta">Order <i class="fa-solid fa-arrow-right"></i></a>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-glow"></div>
+
+  <div class="container page-hero-inner">
+
+    <div class="page-hero-text">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Beranda</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Paket & Harga</span>
+      </nav>
+
+      <span class="section-eyebrow">Paket & Harga</span>
+      <h1>Harga Jelas,<br>Revisi Terukur.</h1>
+      <p class="page-hero-lead">
+        Gak ada biaya tersembunyi. Pilih paket sesuai kebutuhan, atau minta
+        custom sesuai budget kamu. Semua dijelaskan di awal sebelum mulai.
+      </p>
+
+      <div class="page-hero-actions">
+        <a href="#paket" class="btn btn-primary">
+          Lihat Paket <i class="fa-solid fa-arrow-down"></i>
+        </a>
+        <a href="#faq" class="btn btn-ghost">Baca FAQ</a>
+      </div>
+    </div>
+
+    <aside class="page-hero-aside">
+      <div class="aside-card">
+        <div class="aside-card-top">
+          <div class="aside-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <span class="aside-label">Garansi</span>
+            <span class="aside-value">Revisi Sesuai Paket</span>
+          </div>
+        </div>
+        <p class="aside-desc">Gak ada drama, gak ada biaya kejutan. Revisi dikerjakan sesuai kesepakatan awal.</p>
+      </div>
+
+      <div class="aside-card">
+        <div class="aside-card-top">
+          <div class="aside-icon"><i class="fa-solid fa-wallet"></i></div>
+          <div>
+            <span class="aside-label">Pembayaran</span>
+            <span class="aside-value">DP 50%</span>
+          </div>
+        </div>
+        <p class="aside-desc">Mulai dengan DP, sisanya dibayar setelah project selesai dan kamu puas.</p>
+      </div>
+
+      <div class="aside-card">
+        <div class="aside-card-top">
+          <div class="aside-icon"><i class="fa-solid fa-sliders"></i></div>
+          <div>
+            <span class="aside-label">Fleksibel</span>
+            <span class="aside-value">Custom Paket</span>
+          </div>
+        </div>
+        <p class="aside-desc">Butuh kombinasi khusus? Cerita aja, kami susun paket sesuai kebutuhanmu.</p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ============ TAB BIDANG ============ -->
+<nav class="quick-nav" id="quickNav">
+  <div class="container quick-nav-inner">
+    <span class="quick-nav-label">Bidang</span>
+
+    <ul class="quick-nav-list" id="quickNavList">
+      <li>
+        <button class="quick-nav-btn is-active" data-tab="bundling">
+          <i class="fa-solid fa-cubes"></i> Bundling
+        </button>
+      </li>
+      <li>
+        <button class="quick-nav-btn" data-tab="foto">
+          <i class="fa-solid fa-camera"></i> Foto & Visual
+        </button>
+      </li>
+      <li>
+        <button class="quick-nav-btn" data-tab="website">
+          <i class="fa-solid fa-code"></i> Website
+        </button>
+      </li>
+      <li>
+        <button class="quick-nav-btn" data-tab="skripsi">
+          <i class="fa-solid fa-graduation-cap"></i> Skripsi & Karier
+        </button>
+      </li>
+      <li>
+        <button class="quick-nav-btn" data-tab="jersey">
+          <i class="fa-solid fa-shirt"></i> Jersey & Apparel
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ PAKET & HARGA ============ -->
+<section class="paket-section block" id="paket">
+  <div class="container">
+
+    <div class="section-head">
+      <span class="section-eyebrow">Pilih Paket</span>
+      <h2>Sesuaikan dengan Kebutuhanmu</h2>
+      <p>Semua paket bisa dicustom. Harga di bawah adalah estimasi awal.</p>
+    </div>
+
+    <!-- ============================================================
+         TAB: BUNDLING
+         Nanti di Laravel: @foreach($packages['bundling'] as $p)
+         ============================================================ -->
+    <div class="paket-panel is-active" data-panel="bundling">
+      <div class="paket-grid">
+
+        <article class="paket-card">
+          <div class="paket-head">
+            <span class="paket-tier">Starter</span>
+            <h3 class="paket-name">Paket Hemat</h3>
+            <p class="paket-desc">Cocok untuk kebutuhan personal & tugas akhir.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 500rb</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> 1 bidang layanan</li>
+            <li><i class="fa-solid fa-check"></i> 2x revisi</li>
+            <li><i class="fa-solid fa-check"></i> Pengerjaan 5–7 hari</li>
+            <li><i class="fa-solid fa-check"></i> Konsultasi via chat</li>
+            <li class="muted"><i class="fa-solid fa-minus"></i> File source</li>
+            <li class="muted"><i class="fa-solid fa-minus"></i> Project manager</li>
+          </ul>
+
+          <a href="kontak.html?paket=starter" class="btn btn-ghost paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="paket-card featured">
+          <div class="paket-badge">Paling Diminati</div>
+          <div class="paket-head">
+            <span class="paket-tier">Bisnis</span>
+            <h3 class="paket-name">Paket Pro</h3>
+            <p class="paket-desc">Paling laris untuk UMKM, komunitas & profesional.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 2,5jt</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> 2 bidang layanan</li>
+            <li><i class="fa-solid fa-check"></i> 4x revisi</li>
+            <li><i class="fa-solid fa-check"></i> Pengerjaan 10–14 hari</li>
+            <li><i class="fa-solid fa-check"></i> Konsultasi via call</li>
+            <li><i class="fa-solid fa-check"></i> File source diserahkan</li>
+            <li class="muted"><i class="fa-solid fa-minus"></i> Project manager</li>
+          </ul>
+
+          <a href="kontak.html?paket=bisnis" class="btn btn-primary paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="paket-card">
+          <div class="paket-head">
+            <span class="paket-tier">Lengkap</span>
+            <h3 class="paket-name">Paket All-In</h3>
+            <p class="paket-desc">Solusi menyeluruh untuk brand, tim, atau event besar.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 6jt</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> 4 bidang layanan</li>
+            <li><i class="fa-solid fa-check"></i> Revisi unlimited*</li>
+            <li><i class="fa-solid fa-check"></i> Pengerjaan 3–4 minggu</li>
+            <li><i class="fa-solid fa-check"></i> Dedicated project manager</li>
+            <li><i class="fa-solid fa-check"></i> File source diserahkan</li>
+            <li><i class="fa-solid fa-check"></i> Prioritas support</li>
+          </ul>
+
+          <a href="kontak.html?paket=lengkap" class="btn btn-ghost paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ============================================================
+         TAB: FOTO
+         ============================================================ -->
+    <div class="paket-panel" data-panel="foto">
+      <div class="paket-grid">
+
+        <article class="paket-card">
+          <div class="paket-head">
+            <span class="paket-tier">Basic</span>
+            <h3 class="paket-name">Foto Kilat</h3>
+            <p class="paket-desc">Untuk kebutuhan cepat: produk, profil, atau dokumentasi singkat.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 350rb</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> Sesi 1 jam</li>
+            <li><i class="fa-solid fa-check"></i> 15 foto edit</li>
+            <li><i class="fa-solid fa-check"></i> 1 lokasi</li>
+            <li><i class="fa-solid fa-check"></i> File JPG high-res</li>
+            <li class="muted"><i class="fa-solid fa-minus"></i> Video</li>
+          </ul>
+
+          <a href="kontak.html?paket=foto-basic" class="btn btn-ghost paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="paket-card featured">
+          <div class="paket-badge">Best Value</div>
+          <div class="paket-head">
+            <span class="paket-tier">Standard</span>
+            <h3 class="paket-name">Foto Pro</h3>
+            <p class="paket-desc">Paket favorit untuk UMKM & personal branding.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 850rb</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> Sesi 3 jam</li>
+            <li><i class="fa-solid fa-check"></i> 50 foto edit</li>
+            <li><i class="fa-solid fa-check"></i> 2 lokasi</li>
+            <li><i class="fa-solid fa-check"></i> File JPG + RAW</li>
+            <li><i class="fa-solid fa-check"></i> Retouch profesional</li>
+          </ul>
+
+          <a href="kontak.html?paket=foto-pro" class="btn btn-primary paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="paket-card">
+          <div class="paket-head">
+            <span class="paket-tier">Premium</span>
+            <h3 class="paket-name">Foto + Video</h3>
+            <p class="paket-desc">Untuk event, prewedding, atau campaign yang butuh keduanya.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 2,5jt</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> Sesi 6 jam</li>
+            <li><i class="fa-solid fa-check"></i> 100+ foto edit</li>
+            <li><i class="fa-solid fa-check"></i> Video highlight 3 menit</li>
+            <li><i class="fa-solid fa-check"></i> Unlimited lokasi (dalam kota)</li>
+            <li><i class="fa-solid fa-check"></i> Retouch + color grading</li>
+          </ul>
+
+          <a href="kontak.html?paket=foto-premium" class="btn btn-ghost paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ============================================================
+         TAB: WEBSITE
+         ============================================================ -->
+    <div class="paket-panel" data-panel="website">
+      <div class="paket-grid">
+
+        <article class="paket-card">
+          <div class="paket-head">
+            <span class="paket-tier">Landing</span>
+            <h3 class="paket-name">Landing Page</h3>
+            <p class="paket-desc">Satu halaman fokus konversi. Cocok untuk iklan & produk baru.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 1,5jt</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> 1 halaman panjang</li>
+            <li><i class="fa-solid fa-check"></i> Responsive mobile & desktop</li>
+            <li><i class="fa-solid fa-check"></i> Form kontak + WhatsApp</li>
+            <li><i class="fa-solid fa-check"></i> SEO basic</li>
+            <li class="muted"><i class="fa-solid fa-minus"></i> CMS admin</li>
+          </ul>
+
+          <a href="kontak.html?paket=web-landing" class="btn btn-ghost paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="paket-card featured">
+          <div class="paket-badge">Paling Diminati</div>
+          <div class="paket-head">
+            <span class="paket-tier">Profile</span>
+            <h3 class="paket-name">Company Profile</h3>
+            <p class="paket-desc">Website multi-halaman untuk profil bisnis atau komunitas.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 3,5jt</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> Hingga 6 halaman</li>
+            <li><i class="fa-solid fa-check"></i> Responsive & cepat</li>
+            <li><i class="fa-solid fa-check"></i> SEO basic + analytics</li>
+            <li><i class="fa-solid fa-check"></i> CMS admin (update sendiri)</li>
+            <li><i class="fa-solid fa-check"></i> Domain + hosting setup</li>
+          </ul>
+
+          <a href="kontak.html?paket=web-profile" class="btn btn-primary paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="paket-card">
+          <div class="paket-head">
+            <span class="paket-tier">Toko</span>
+            <h3 class="paket-name">Toko Online</h3>
+            <p class="paket-desc">Katalog produk + checkout sederhana, integrasi WhatsApp.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 6jt</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> Katalog & kategori produk</li>
+            <li><i class="fa-solid fa-check"></i> Keranjang & checkout</li>
+            <li><i class="fa-solid fa-check"></i> Integrasi WhatsApp & payment</li>
+            <li><i class="fa-solid fa-check"></i> CMS admin lengkap</li>
+            <li><i class="fa-solid fa-check"></i> Training penggunaan</li>
+          </ul>
+
+          <a href="kontak.html?paket=web-toko" class="btn btn-ghost paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ============================================================
+         TAB: SKRIPSI & KARIER
+         ============================================================ -->
+    <div class="paket-panel" data-panel="skripsi">
+      <div class="paket-grid">
+
+        <article class="paket-card">
+          <div class="paket-head">
+            <span class="paket-tier">Basic</span>
+            <h3 class="paket-name">Olah Data</h3>
+            <p class="paket-desc">Untuk yang butuh bantuan statistik & interpretasi hasil.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 250rb</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> Analisis SPSS / Excel</li>
+            <li><i class="fa-solid fa-check"></i> Output tabel & grafik</li>
+            <li><i class="fa-solid fa-check"></i> Interpretasi hasil</li>
+            <li><i class="fa-solid fa-check"></i> Konsultasi via chat</li>
+            <li class="muted"><i class="fa-solid fa-minus"></i> Pendampingan sidang</li>
+          </ul>
+
+          <a href="kontak.html?paket=skripsi-olahdata" class="btn btn-ghost paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="paket-card featured">
+          <div class="paket-badge">Paling Diminati</div>
+          <div class="paket-head">
+            <span class="paket-tier">Karier</span>
+            <h3 class="paket-name">CV + Interview</h3>
+            <p class="paket-desc">Paket lengkap untuk yang lagi cari kerja atau magang.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 450rb</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> CV ATS-friendly</li>
+            <li><i class="fa-solid fa-check"></i> Portofolio online 1 halaman</li>
+            <li><i class="fa-solid fa-check"></i> Optimasi LinkedIn</li>
+            <li><i class="fa-solid fa-check"></i> 1 sesi simulasi interview</li>
+            <li><i class="fa-solid fa-check"></i> Feedback & perbaikan</li>
+          </ul>
+
+          <a href="kontak.html?paket=skripsi-karier" class="btn btn-primary paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="paket-card">
+          <div class="paket-head">
+            <span class="paket-tier">Lengkap</span>
+            <h3 class="paket-name">Bimbingan Skripsi</h3>
+            <p class="paket-desc">Pendampingan dari bab 1 sampai sidang, tanpa drama.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 1,5jt</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> Bimbingan bab 1–5</li>
+            <li><i class="fa-solid fa-check"></i> Olah data + interpretasi</li>
+            <li><i class="fa-solid fa-check"></i> Review & revisi tulisan</li>
+            <li><i class="fa-solid fa-check"></i> Persiapan sidang</li>
+            <li><i class="fa-solid fa-check"></i> Chat support hingga lulus</li>
+          </ul>
+
+          <a href="kontak.html?paket=skripsi-full" class="btn btn-ghost paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ============================================================
+         TAB: JERSEY
+         ============================================================ -->
+    <div class="paket-panel" data-panel="jersey">
+      <div class="paket-grid">
+
+        <article class="paket-card">
+          <div class="paket-head">
+            <span class="paket-tier">Basic</span>
+            <h3 class="paket-name">Desain Saja</h3>
+            <p class="paket-desc">Buat kamu yang sudah punya produsen sendiri.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 150rb</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> 1 desain jersey</li>
+            <li><i class="fa-solid fa-check"></i> File vector (AI/PDF)</li>
+            <li><i class="fa-solid fa-check"></i> Mockup preview</li>
+            <li><i class="fa-solid fa-check"></i> 2x revisi</li>
+            <li class="muted"><i class="fa-solid fa-minus"></i> Konsultasi bahan</li>
+          </ul>
+
+          <a href="kontak.html?paket=jersey-desain" class="btn btn-ghost paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="paket-card featured">
+          <div class="paket-badge">Best Value</div>
+          <div class="paket-head">
+            <span class="paket-tier">Standard</span>
+            <h3 class="paket-name">Desain + Konsultasi</h3>
+            <p class="paket-desc">Desain plus arahan bahan & sablon ke produsen.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 350rb</span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> 2 desain jersey</li>
+            <li><i class="fa-solid fa-check"></i> File vector + mockup 3D</li>
+            <li><i class="fa-solid fa-check"></i> 4x revisi</li>
+            <li><i class="fa-solid fa-check"></i> Konsultasi bahan & sablon</li>
+            <li><i class="fa-solid fa-check"></i> Rekomendasi produsen</li>
+          </ul>
+
+          <a href="kontak.html?paket=jersey-konsul" class="btn btn-primary paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+        <article class="paket-card">
+          <div class="paket-head">
+            <span class="paket-tier">Premium</span>
+            <h3 class="paket-name">Full Package</h3>
+            <p class="paket-desc">Desain + produksi + pengiriman. Tinggal terima jadi.</p>
+          </div>
+
+          <div class="paket-price">
+            <span class="paket-from">Mulai dari</span>
+            <span class="paket-amount">Rp 150rb<span class="paket-unit">/pcs</span></span>
+          </div>
+
+          <ul class="paket-features">
+            <li><i class="fa-solid fa-check"></i> Desain custom unlimited</li>
+            <li><i class="fa-solid fa-check"></i> Produksi jersey (min. 12 pcs)</li>
+            <li><i class="fa-solid fa-check"></i> Bahan dry-fit premium</li>
+            <li><i class="fa-solid fa-check"></i> Nama & nomor punggung</li>
+            <li><i class="fa-solid fa-check"></i> Pengiriman ke seluruh Indonesia</li>
+          </ul>
+
+          <a href="kontak.html?paket=jersey-full" class="btn btn-ghost paket-cta">
+            Pilih Paket <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </article>
+
+      </div>
+    </div>
+
+    <p class="paket-note">
+      <i class="fa-solid fa-circle-info"></i>
+      Harga di atas adalah estimasi awal. Harga final tergantung tingkat kompleksitas, deadline, dan scope pekerjaan. Konsultasi dulu — gratis.
+    </p>
+
+  </div>
+</section>
+
+<!-- ============ PERBANDINGAN (Kenapa paket ini) ============ -->
+<section class="block compare-section">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Yang Kamu Dapat</span>
+      <h2>Bukan Cuma Harga, Tapi Pengalaman</h2>
+      <p>Semua paket — dari termurah sampai terlengkap — dapat fasilitas dasar ini.</p>
+    </div>
+
+    <div class="benefit-grid">
+      <div class="benefit-item">
+        <div class="benefit-icon"><i class="fa-solid fa-comments"></i></div>
+        <h3>Konsultasi Awal</h3>
+        <p>Diskusi kebutuhan dulu sebelum deal. Gratis, tanpa paksaan.</p>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-icon"><i class="fa-solid fa-list-check"></i></div>
+        <h3>Scope Jelas</h3>
+        <p>Apa yang dikerjakan & apa yang tidak, ditulis di awal.</p>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-icon"><i class="fa-solid fa-rotate"></i></div>
+        <h3>Revisi Terukur</h3>
+        <p>Jumlah revisi transparan. Gak ada drama "revisi ke-10".</p>
+      </div>
+
+      <div class="benefit-item">
+        <div class="benefit-icon"><i class="fa-solid fa-clock"></i></div>
+        <h3>Deadline Dijaga</h3>
+        <p>Progress report rutin. Kalau mundur, kami kabari dari awal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="block faq-section" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">FAQ</span>
+      <h2>Pertanyaan yang Sering Ditanya</h2>
+      <p>Belum yakin? Mungkin jawabannya ada di sini.</p>
+    </div>
+
+    <div class="faq-list" id="faqList">
+
+      <!-- LOOP: faq-item — mulai -->
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>Bagaimana cara order di Plan B?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Kamu bisa klik tombol WhatsApp di halaman ini, ceritakan kebutuhanmu, lalu tim kami akan kirim detail paket, harga, dan estimasi waktu.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>Apakah bisa custom paket di luar yang tersedia?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Bisa banget. Paket di atas cuma patokan. Kami sering bikin paket custom sesuai budget dan kebutuhan klien.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>Berapa lama pengerjaan?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Tergantung bidang: foto 3–7 hari, website 7–14 hari, skripsi & karier 3–10 hari, jersey 5–10 hari. Paket gabungan menyesuaikan.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>Revisi berapa kali?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Paket Starter 2x, Paket Bisnis 4x, Paket Lengkap revisi unlimited dengan catatan tidak mengubah brief awal.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>Pembayaran bagaimana?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>DP 50% di awal, sisanya setelah project selesai. Bisa transfer bank atau e-wallet.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" type="button">
+          <span>Kalau hasilnya tidak sesuai brief?</span>
+          <i class="fa-solid fa-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Kami akan revisi sampai sesuai brief awal. Kalau tetap tidak memenuhi, kami berikan garansi partial refund sesuai kesepakatan.</p>
+        </div>
+      </div>
+      <!-- LOOP: faq-item — selesai -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="cta-final">
+  <div class="container">
+    <div class="cta-box">
+      <h2>Masih Bingung Pilih Paket?</h2>
+      <p>Cerita aja kebutuhanmu. Kami bantu cari paket paling pas — atau bikin yang baru.</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/6281234567890?text=Halo%20Plan%20B,%20saya%20mau%20tanya%20soal%20paket" class="btn btn-wa" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Tanya via WhatsApp
+        </a>
+        <a href="kontak.html" class="btn btn-ghost">Lihat Cara Order</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-mark">B</div>
+          <div class="logo-text">Plan<span class="b">B</span></div>
+        </a>
+        <p>Agency kreatif & akademik. Solusi ketika rencana A gagal — dan alasan kenapa rencana B jadi juara.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="layanan.html#foto">Foto & Visual</a></li>
+          <li><a href="layanan.html#website">Website</a></li>
+          <li><a href="layanan.html#skripsi">Skripsi & Karier</a></li>
+          <li><a href="layanan.html#jersey">Jersey & Apparel</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Perusahaan</h4>
+        <ul>
+          <li><a href="tim.html">Tentang Tim</a></li>
+          <li><a href="portofolio.html">Portofolio</a></li>
+          <li><a href="paket.html">Paket & Harga</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li><a href="mailto:hello@planb.agency">hello@planb.agency</a></li>
+          <li><a href="https://wa.me/6281234567890">+62 812-3456-7890</a></li>
+          <li><a href="#">Jakarta, Indonesia</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2025 Plan B Agency. All rights reserved.</div>
+      <div>Dibuat dengan teliti. Bukan dengan template.</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/6281234567890?text=Halo%20Plan%20B" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
