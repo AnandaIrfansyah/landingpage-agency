@@ -3973,3 +3973,36 @@ a.contact-card { cursor: pointer; }
   .order-redeem-form { padding: 24px 20px; }
   .order-note { font-size: 0.82rem; padding: 14px 16px; }
 }
+
+/* ============================================
+   PORTOFOLIO (Beranda) — GAMBAR
+   ============================================ */
+.porto-item-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.porto-item-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.porto-item:hover .porto-item-bg img {
+  transform: scale(1.08); /* Efek zoom */
+}
+
+/* Gradient overlay biar teks putih tetap kebaca di atas gambar */
+.porto-item::before {
+  z-index: 1; /* Naikin gradient ke atas gambar */
+}
+
+/* Icon & Teks ditaruh paling atas */
+.porto-icon {
+  z-index: 2;
+}
+.porto-overlay {
+  z-index: 2;
+}

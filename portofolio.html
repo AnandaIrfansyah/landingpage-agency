@@ -10,6 +10,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- CSS Tambahan Khusus Portofolio -->
+  <style>
+    .porto-card-bg {
+      position: absolute; inset: 0; z-index: 1;
+    }
+    .porto-card-bg img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .porto-card:hover .porto-card-bg img {
+      transform: scale(1.08);
+    }
+    /* Gradient ditaruh di atas gambar, tapi di bawah teks */
+    .porto-card::after {
+      z-index: 2;
+    }
+    .porto-card-content {
+      z-index: 3;
+    }
+  </style>
 </head>
 <body>
 
@@ -30,7 +51,7 @@
       <li><a href="kontak.html">Kontak</a></li>
     </ul>
 
-    <a href="kontak.html" class="nav-cta">Order <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="order.html" class="nav-cta">Order <i class="fa-solid fa-arrow-right"></i></a>
 
     <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
       <i class="fa-solid fa-bars"></i>
@@ -42,9 +63,7 @@
 <section class="page-hero">
   <div class="page-hero-bg"></div>
   <div class="page-hero-glow"></div>
-
   <div class="container page-hero-inner">
-
     <div class="page-hero-text">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="index.html">Beranda</a>
@@ -63,7 +82,7 @@
         <a href="#galeri" class="btn btn-primary">
           Lihat Galeri <i class="fa-solid fa-arrow-down"></i>
         </a>
-        <a href="kontak.html" class="btn btn-ghost">Order Serupa</a>
+        <a href="order.html" class="btn btn-ghost">Order Serupa</a>
       </div>
     </div>
 
@@ -78,7 +97,6 @@
         </div>
         <p class="aside-desc">Dari 2020 sampai sekarang, di 4 bidang layanan Plan B.</p>
       </div>
-
       <div class="aside-card">
         <div class="aside-card-top">
           <div class="aside-icon"><i class="fa-solid fa-star"></i></div>
@@ -89,7 +107,6 @@
         </div>
         <p class="aside-desc">Dari 100+ ulasan klien yang sudah kerja sama.</p>
       </div>
-
       <div class="aside-card">
         <div class="aside-card-top">
           <div class="aside-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
@@ -101,7 +118,6 @@
         <p class="aside-desc">Klien yang balik lagi karena hasilnya konsisten.</p>
       </div>
     </aside>
-
   </div>
 </section>
 
@@ -109,33 +125,12 @@
 <nav class="quick-nav" id="quickNav">
   <div class="container quick-nav-inner">
     <span class="quick-nav-label">Filter</span>
-
     <ul class="quick-nav-list" id="quickNavList">
-      <li>
-        <button class="quick-nav-btn is-active" data-filter="all">
-          <i class="fa-solid fa-layer-group"></i> Semua
-        </button>
-      </li>
-      <li>
-        <button class="quick-nav-btn" data-filter="foto">
-          <i class="fa-solid fa-camera"></i> Foto
-        </button>
-      </li>
-      <li>
-        <button class="quick-nav-btn" data-filter="website">
-          <i class="fa-solid fa-code"></i> Website
-        </button>
-      </li>
-      <li>
-        <button class="quick-nav-btn" data-filter="skripsi">
-          <i class="fa-solid fa-graduation-cap"></i> Skripsi & Karier
-        </button>
-      </li>
-      <li>
-        <button class="quick-nav-btn" data-filter="jersey">
-          <i class="fa-solid fa-shirt"></i> Jersey
-        </button>
-      </li>
+      <li><button class="quick-nav-btn is-active" data-filter="all"><i class="fa-solid fa-layer-group"></i> Semua</button></li>
+      <li><button class="quick-nav-btn" data-filter="foto"><i class="fa-solid fa-camera"></i> Foto</button></li>
+      <li><button class="quick-nav-btn" data-filter="website"><i class="fa-solid fa-code"></i> Website</button></li>
+      <li><button class="quick-nav-btn" data-filter="skripsi"><i class="fa-solid fa-graduation-cap"></i> Skripsi & Karier</button></li>
+      <li><button class="quick-nav-btn" data-filter="jersey"><i class="fa-solid fa-shirt"></i> Jersey</button></li>
     </ul>
   </div>
 </nav>
@@ -143,26 +138,19 @@
 <!-- ============ GALERI ============ -->
 <section class="portofolio-section block" id="galeri">
   <div class="container">
-
     <div class="section-head">
       <span class="section-eyebrow">Galeri</span>
       <h2>Beberapa Karya Terpilih</h2>
       <p>Klik kartu untuk lihat detail project.</p>
     </div>
 
-    <!-- ============================================================
-         GRID PORTOFOLIO
-         Nanti di Laravel: @foreach($portfolios as $item)
-         ============================================================ -->
     <div class="portofolio-grid" id="portofolioGrid">
 
-      <!-- Item 1 — besar (featured) -->
       <article class="porto-card wide" data-category="website"
         data-title="Landing Page Agency Kreatif"
-        data-client="Studio Kanvas"
-        data-year="2024"
-        data-desc="Landing page satu halaman untuk agency kreatif. Fokus pada konversi lead lewat form yang simpel dan CTA yang jelas. Dilengkapi animasi scroll halus dan optimasi kecepatan.">
-        <div class="porto-card-bg" data-color="1"></div>
+        data-client="Studio Kanvas" data-year="2024"
+        data-desc="Landing page satu halaman untuk agency kreatif. Fokus pada konversi lead lewat form yang simpel dan CTA yang jelas.">
+        <div class="porto-card-bg"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Website"></div>
         <div class="porto-card-content">
           <div class="porto-card-top">
             <span class="porto-tag">Website</span>
@@ -175,13 +163,11 @@
         </div>
       </article>
 
-      <!-- Item 2 -->
       <article class="porto-card" data-category="foto"
         data-title="Katalog UMKM Kopi Nusantara"
-        data-client="Kopi Nusantara"
-        data-year="2024"
+        data-client="Kopi Nusantara" data-year="2024"
         data-desc="Foto produk untuk 15 varian kopi. Background bersih, pencahayaan konsisten, hasil siap dipakai untuk marketplace dan Instagram.">
-        <div class="porto-card-bg" data-color="2"></div>
+        <div class="porto-card-bg"><img src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=600&auto=format&fit=crop" alt="Kopi"></div>
         <div class="porto-card-content">
           <div class="porto-card-top">
             <span class="porto-tag">Foto</span>
@@ -194,13 +180,11 @@
         </div>
       </article>
 
-      <!-- Item 3 -->
       <article class="porto-card" data-category="skripsi"
         data-title="Olah Data SPSS Skripsi Manajemen"
-        data-client="Mahasiswa Universitas X"
-        data-year="2024"
+        data-client="Mahasiswa Universitas X" data-year="2024"
         data-desc="Olah data 120 responden dengan SPSS. Output lengkap: uji validitas, reliabilitas, regresi berganda, plus interpretasi siap dipakai di bab 4.">
-        <div class="porto-card-bg" data-color="3"></div>
+        <div class="porto-card-bg"><img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?q=80&w=600&auto=format&fit=crop" alt="Skripsi"></div>
         <div class="porto-card-content">
           <div class="porto-card-top">
             <span class="porto-tag">Skripsi</span>
@@ -213,13 +197,11 @@
         </div>
       </article>
 
-      <!-- Item 4 -->
       <article class="porto-card" data-category="jersey"
         data-title="Desain Jersey Tim Futsal Garuda"
-        data-client="Garuda Futsal"
-        data-year="2023"
+        data-client="Garuda Futsal" data-year="2023"
         data-desc="Desain jersey home & away untuk tim futsal. Konsep modern dengan elemen merah-putih, plus mockup 3D untuk preview ke seluruh tim.">
-        <div class="porto-card-bg" data-color="4"></div>
+        <div class="porto-card-bg"><img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=600&auto=format&fit=crop" alt="Jersey"></div>
         <div class="porto-card-content">
           <div class="porto-card-top">
             <span class="porto-tag">Jersey</span>
@@ -232,13 +214,11 @@
         </div>
       </article>
 
-      <!-- Item 5 -->
       <article class="porto-card" data-category="website"
         data-title="Company Profile Bumi Konstruksi"
-        data-client="Bumi Konstruksi"
-        data-year="2024"
+        data-client="Bumi Konstruksi" data-year="2024"
         data-desc="Company profile 6 halaman dengan CMS admin. Tim marketing bisa update project sendiri tanpa perlu developer.">
-        <div class="porto-card-bg" data-color="5"></div>
+        <div class="porto-card-bg"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop" alt="Konstruksi"></div>
         <div class="porto-card-content">
           <div class="porto-card-top">
             <span class="porto-tag">Website</span>
@@ -251,13 +231,11 @@
         </div>
       </article>
 
-      <!-- Item 6 — besar -->
       <article class="porto-card wide" data-category="foto"
         data-title="Prewedding Cinematic di Bali"
-        data-client="Rina & Andre"
-        data-year="2024"
+        data-client="Rina & Andre" data-year="2024"
         data-desc="Sesi prewedding 2 hari di Bali. Konsep cinematic dengan tone hangat, menghasilkan 200+ foto edit dan video highlight 4 menit.">
-        <div class="porto-card-bg" data-color="6"></div>
+        <div class="porto-card-bg"><img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=800&auto=format&fit=crop" alt="Prewedding"></div>
         <div class="porto-card-content">
           <div class="porto-card-top">
             <span class="porto-tag">Foto</span>
@@ -270,13 +248,11 @@
         </div>
       </article>
 
-      <!-- Item 7 -->
       <article class="porto-card" data-category="skripsi"
         data-title="CV & Portofolio Karier Fresh Graduate"
-        data-client="Bagas Prasetya"
-        data-year="2024"
+        data-client="Bagas Prasetya" data-year="2024"
         data-desc="CV ATS-friendly, portofolio online, dan optimasi LinkedIn. Hasilnya: 3 panggilan interview dalam 2 minggu.">
-        <div class="porto-card-bg" data-color="7"></div>
+        <div class="porto-card-bg"><img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=600&auto=format&fit=crop" alt="Karier"></div>
         <div class="porto-card-content">
           <div class="porto-card-top">
             <span class="porto-tag">Karier</span>
@@ -289,13 +265,11 @@
         </div>
       </article>
 
-      <!-- Item 8 -->
       <article class="porto-card" data-category="jersey"
         data-title="Apparel Event Kampus Universitas Y"
-        data-client="BEM Universitas Y"
-        data-year="2023"
+        data-client="BEM Universitas Y" data-year="2023"
         data-desc="Jaket angkatan dan kaos event untuk 500 mahasiswa. Desain clean dengan elemen warna kampus, produksi selesai tepat waktu.">
-        <div class="porto-card-bg" data-color="8"></div>
+        <div class="porto-card-bg"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=600&auto=format&fit=crop" alt="Apparel"></div>
         <div class="porto-card-content">
           <div class="porto-card-top">
             <span class="porto-tag">Jersey</span>
@@ -308,13 +282,11 @@
         </div>
       </article>
 
-      <!-- Item 9 -->
       <article class="porto-card" data-category="foto"
         data-title="Dokumentasi Wisuda Sesi Keluarga"
-        data-client="Keluarga Hartono"
-        data-year="2023"
+        data-client="Keluarga Hartono" data-year="2023"
         data-desc="Sesi foto wisuda dengan keluarga besar. 3 lokasi dalam kota, hasil 80 foto edit siap cetak dan posting.">
-        <div class="porto-card-bg" data-color="9"></div>
+        <div class="porto-card-bg"><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" alt="Wisuda"></div>
         <div class="porto-card-content">
           <div class="porto-card-top">
             <span class="porto-tag">Foto</span>
@@ -329,12 +301,10 @@
 
     </div>
 
-    <!-- Empty state (kalau filter tidak ada hasil) -->
     <div class="porto-empty" id="portoEmpty" style="display: none;">
       <i class="fa-solid fa-inbox"></i>
       <p>Belum ada karya untuk kategori ini.</p>
     </div>
-
   </div>
 </section>
 
@@ -371,7 +341,6 @@
           <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
-
       <div class="footer-col">
         <h4>Layanan</h4>
         <ul>
@@ -381,17 +350,15 @@
           <li><a href="layanan.html#jersey">Jersey & Apparel</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Perusahaan</h4>
         <ul>
-          <li><a href="tim.html">Tentang Tim</a></li>
+          <li><a href="order.html">Order & Pembayaran</a></li>
           <li><a href="portofolio.html">Portofolio</a></li>
           <li><a href="paket.html">Paket & Harga</a></li>
           <li><a href="kontak.html">Kontak</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h4>Kontak</h4>
         <ul>
@@ -401,7 +368,6 @@
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div>© 2025 Plan B Agency. All rights reserved.</div>
       <div>Dibuat dengan teliti. Bukan dengan template.</div>
@@ -418,14 +384,14 @@
   <button class="lightbox-close" id="lightboxClose" aria-label="Tutup">
     <i class="fa-solid fa-xmark"></i>
   </button>
-
   <div class="lightbox-inner">
+    
+    <!-- WADAH GAMBAR POPUP -->
     <div class="lightbox-visual" id="lightboxVisual"></div>
 
     <div class="lightbox-body">
       <span class="lightbox-tag" id="lightboxTag">—</span>
       <h2 class="lightbox-title" id="lightboxTitle">—</h2>
-
       <div class="lightbox-meta">
         <div class="lightbox-meta-item">
           <span class="meta-label">Klien</span>
@@ -436,11 +402,9 @@
           <span class="meta-value" id="lightboxYear">—</span>
         </div>
       </div>
-
       <p class="lightbox-desc" id="lightboxDesc">—</p>
-
       <div class="lightbox-actions">
-        <a href="kontak.html" class="btn btn-primary">
+        <a href="order.html" class="btn btn-primary">
           Order Serupa <i class="fa-solid fa-arrow-right"></i>
         </a>
       </div>
@@ -449,6 +413,5 @@
 </div>
 
 <script src="assets/js/main.js"></script>
-
 </body>
 </html>

@@ -245,14 +245,11 @@
     }
   }
 
-  /* ============================================
-     PORTOFOLIO: LIGHTBOX
-     ============================================ */
+    /* ---------- PORTOFOLIO: LIGHTBOX ---------- */
   const lightbox = document.getElementById('lightbox');
   const lightboxClose = document.getElementById('lightboxClose');
 
   if (lightbox && portoCards.length) {
-
     const lbTag = document.getElementById('lightboxTag');
     const lbTitle = document.getElementById('lightboxTitle');
     const lbClient = document.getElementById('lightboxClient');
@@ -279,11 +276,14 @@
       if (lbYear) lbYear.textContent = year;
       if (lbDesc) lbDesc.textContent = desc;
 
-      const bgCard = card.querySelector('.porto-card-bg');
-      if (bgCard && lbVisual) {
-        const colorKey = bgCard.dataset.color;
-        lbVisual.style.background = getComputedStyle(bgCard).background;
-        lbVisual.dataset.color = colorKey;
+      // ============================================
+      // BAGIAN INI YANG DIBENERIN (AMBIL GAMBAR)
+      // ============================================
+      const imgTag = card.querySelector('.porto-card-bg img');
+      
+      if (imgTag && lbVisual) {
+        // Masukin gambar ke dalam lightbox
+        lbVisual.innerHTML = `<img src="${imgTag.src}" alt="${title}" style="width:100%; height:100%; object-fit:cover; border-radius: 20px 0 0 20px;">`;
       }
 
       lightbox.classList.add('is-open');
@@ -304,11 +304,9 @@
     if (lightboxClose) {
       lightboxClose.addEventListener('click', closeLightbox);
     }
-
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();
     });
-
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
         closeLightbox();
