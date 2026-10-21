@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order — Plan B Agency</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav id="nav" class="navbar scrolled">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-mark">B</div>
+      <div class="logo-text">Plan<span class="b">B</span></div>
+    </a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="layanan.html">Layanan</a></li>
+      <li><a href="paket.html">Paket & Harga</a></li>
+      <li><a href="portofolio.html">Portofolio</a></li>
+      <li><a href="order.html" class="active">Order</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+
+    <a href="order.html" class="nav-cta">Order <i class="fa-solid fa-arrow-right"></i></a>
+
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ ORDER FLOW ============ -->
+<section class="order-flow">
+
+  <div class="container">
+
+    <!-- ============ STEP INDICATOR ============ -->
+    <div class="step-indicator" id="stepIndicator">
+      <div class="step-item is-active" data-step="1">
+        <div class="step-circle"><span>1</span><i class="fa-solid fa-check"></i></div>
+        <div class="step-label">Mulai</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-item" data-step="2">
+        <div class="step-circle"><span>2</span><i class="fa-solid fa-check"></i></div>
+        <div class="step-label">Cek Kode</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-item" data-step="3">
+        <div class="step-circle"><span>3</span><i class="fa-solid fa-check"></i></div>
+        <div class="step-label">Pembayaran</div>
+      </div>
+      <div class="step-line"></div>
+      <div class="step-item" data-step="4">
+        <div class="step-circle"><span>4</span><i class="fa-solid fa-check"></i></div>
+        <div class="step-label">Konfirmasi</div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         LAYAR 1: MULAI — WAJIB CHAT ADMIN DULU
+         ============================================================ -->
+    <div class="screen is-active" id="screenForm">
+
+      <div class="screen-head">
+        <span class="section-eyebrow">Langkah 1</span>
+        <h1>Mulai dari Chat Admin</h1>
+        <p>Semua project Plan B diawali dengan diskusi. Ceritakan kebutuhanmu, admin akan bantu hitung harga & detail.</p>
+      </div>
+
+      <div class="order-start-box">
+
+        <!-- Tombol besar: WA -->
+        <a href="https://wa.me/6281234567890?text=Halo%20Plan%20B,%20saya%20mau%20konsultasi%20project"
+           class="order-chat-btn"
+           target="_blank"
+           rel="noopener">
+          <div class="order-chat-icon">
+            <i class="fa-brands fa-whatsapp"></i>
+          </div>
+          <div class="order-chat-text">
+            <strong>Chat Admin via WhatsApp</strong>
+            <span>Respon &lt; 1 jam · Konsultasi gratis</span>
+          </div>
+          <i class="fa-solid fa-arrow-right order-chat-arrow"></i>
+        </a>
+
+        <div class="order-divider">
+          <span>atau</span>
+        </div>
+
+        <!-- Form cek kode redeem -->
+        <form class="order-redeem-form" id="redeemForm" novalidate>
+          <div class="order-redeem-head">
+            <div class="order-redeem-icon">
+              <i class="fa-solid fa-ticket"></i>
+            </div>
+            <div>
+              <h3>Sudah punya kode redeem?</h3>
+              <p>Masukkan kode dari admin untuk lihat rincian dan bayar.</p>
+            </div>
+          </div>
+
+          <div class="order-redeem-fields">
+            <div class="form-group">
+              <label for="nama">Nama Lengkap <span class="required">*</span></label>
+              <input type="text" id="nama" name="nama" placeholder="Nama kamu" required>
+              <span class="form-error" data-error="nama"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="wa">Nomor WhatsApp <span class="required">*</span></label>
+              <input type="tel" id="wa" name="wa" placeholder="08xxxxxxxxxx" required
+                inputmode="numeric" autocomplete="tel">
+              <span class="form-error" data-error="wa"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span class="optional">(opsional)</span></label>
+              <input type="email" id="email" name="email" placeholder="nama@email.com">
+              <span class="form-error" data-error="email"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="redeemCode">Kode Redeem <span class="required">*</span></label>
+              <input type="text" id="redeemCode" name="redeemCode"
+                placeholder="Contoh: PLANB-ABCD-1234"
+                autocomplete="off"
+                style="text-transform: uppercase;">
+              <span class="form-error" data-error="redeemCode"></span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary order-redeem-submit" id="btnCheckCode">
+            <i class="fa-solid fa-magnifying-glass"></i> Cek Kode & Lanjut
+          </button>
+        </form>
+
+        <!-- Pesan kalau gak punya kode -->
+        <div class="order-note">
+            <div class="order-note-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div class="order-note-text">
+                <strong>Belum punya kode redeem?</strong>
+                Itu artinya kamu belum deal harga dengan admin. Silakan chat admin dulu untuk diskusi dan dapatkan kode pembayaran.
+            </div>
+            <a href="https://wa.me/6281234567890?text=Halo%20Plan%20B" target="_blank" class="btn btn-ghost order-note-btn">
+                Chat Admin <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ============================================================
+         LAYAR 2: HASIL CEK KODE
+         ============================================================ -->
+    <div class="screen" id="screenRedeem">
+
+      <div class="screen-head">
+        <span class="section-eyebrow">Langkah 2</span>
+        <h1>Rincian Kesepakatan</h1>
+        <p>Periksa detail di bawah. Pastikan semuanya sesuai sebelum lanjut ke pembayaran.</p>
+      </div>
+
+      <div class="redeem-card" id="redeemCard"></div>
+
+      <div class="status-screen" id="redeemStatusError" hidden>
+        <div class="status-icon" id="statusIcon">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
+        <h2 id="statusTitle">—</h2>
+        <p id="statusMessage">—</p>
+        <div class="status-actions">
+          <a href="https://wa.me/6281234567890?text=Halo%20Plan%20B,%20saya%20butuh%20bantuan%20kode%20redeem" class="btn btn-primary" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Chat Admin
+          </a>
+          <button type="button" class="btn btn-ghost" id="btnBackToForm">
+            Kembali ke Form
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============================================================
+         LAYAR 3: PEMBAYARAN QRIS
+         ============================================================ -->
+    <div class="screen" id="screenPayment">
+
+      <div class="screen-head">
+        <span class="section-eyebrow">Langkah 3</span>
+        <h1>Pembayaran QRIS</h1>
+        <p>Scan QR di bawah pakai aplikasi e-wallet atau m-banking kamu.</p>
+      </div>
+
+      <div class="payment-layout">
+
+        <div class="payment-qr-card">
+
+          <div class="qr-timer" id="qrTimer">
+            <i class="fa-solid fa-clock"></i>
+            <span>Bayar dalam <strong id="timerDisplay">30:00</strong></span>
+          </div>
+
+          <div class="qr-box" id="qrBox">
+            <div class="qr-placeholder">
+              <i class="fa-solid fa-qrcode"></i>
+              <span>QR Code</span>
+            </div>
+          </div>
+
+          <div class="qr-amount-box">
+            <span class="qr-amount-label">Total yang harus dibayar</span>
+            <div class="qr-amount-row">
+              <span class="qr-amount" id="qrAmount">Rp 450.137</span>
+              <button type="button" class="btn-copy" id="btnCopyAmount">
+                <i class="fa-regular fa-copy"></i> Salin
+              </button>
+            </div>
+            <span class="qr-amount-hint">Bayar <strong>tepat</strong> sesuai nominal di atas (3 digit terakhir adalah kode unik).</span>
+          </div>
+
+        </div>
+
+        <div class="payment-info-card">
+
+          <div class="payment-steps">
+            <h3><i class="fa-solid fa-list-ol"></i> Cara Bayar</h3>
+            <ol>
+              <li>Buka aplikasi e-wallet atau m-banking.</li>
+              <li>Pilih "Scan QRIS" dan arahkan ke kode di samping.</li>
+              <li>Masukkan nominal <strong>tepat</strong> seperti yang tertera, lalu konfirmasi.</li>
+            </ol>
+          </div>
+
+          <div class="payment-actions">
+            <button type="button" class="btn btn-primary" id="btnPaid">
+              <i class="fa-solid fa-check"></i> Saya Sudah Bayar
+            </button>
+            <a href="https://wa.me/6281234567890?text=Halo%20Plan%20B,%20saya%20butuh%20bantuan%20pembayaran" class="btn btn-ghost" target="_blank">
+              <i class="fa-brands fa-whatsapp"></i> Chat Admin
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="status-screen" id="qrExpired" hidden>
+        <div class="status-icon">
+          <i class="fa-solid fa-hourglass-end"></i>
+        </div>
+        <h2>Waktu Habis</h2>
+        <p>Batas waktu pembayaran 30 menit sudah lewat. Silakan buat QR baru.</p>
+        <div class="status-actions">
+          <button type="button" class="btn btn-primary" id="btnNewQR">
+            <i class="fa-solid fa-rotate-right"></i> Buat QR Baru
+          </button>
+          <a href="https://wa.me/6281234567890?text=Halo%20Plan%20B" class="btn btn-ghost" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> Chat Admin
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============================================================
+         MODAL UPLOAD BUKTI
+         ============================================================ -->
+    <div class="modal" id="modalUpload" aria-hidden="true">
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-box" role="dialog" aria-labelledby="modalUploadTitle">
+
+        <button class="modal-close" data-close-modal aria-label="Tutup">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-header">
+          <h2 id="modalUploadTitle">Unggah Bukti Pembayaran</h2>
+          <p>Pastikan bukti transfer terlihat jelas — nominal, tanggal, dan status berhasil.</p>
+        </div>
+
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="uploadInput" accept="image/*" hidden>
+          <div class="upload-placeholder" id="uploadPlaceholder">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <p><strong>Klik untuk pilih gambar</strong></p>
+            <span>Format JPG, PNG · Maks 5 MB</span>
+          </div>
+          <div class="upload-preview" id="uploadPreview" hidden>
+            <img id="previewImage" alt="Pratinjau bukti bayar">
+            <button type="button" class="upload-remove" id="uploadRemove" aria-label="Hapus gambar">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+        <span class="form-error" id="uploadError" hidden></span>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" data-close-modal>Batal</button>
+          <button type="button" class="btn btn-primary" id="btnSendProof" disabled>
+            Kirim Bukti <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================================
+         LAYAR 4: MENUNGGU KONFIRMASI / HASIL
+         ============================================================ -->
+    <div class="screen" id="screenResult">
+
+      <div class="screen-head">
+        <span class="section-eyebrow">Langkah 4</span>
+        <h1 id="resultTitle">Menunggu Konfirmasi</h1>
+        <p id="resultSubtitle">Bukti pembayaranmu sudah kami terima. Admin akan memverifikasi dalam waktu singkat.</p>
+      </div>
+
+      <div class="result-card" id="resultCard"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ SIM PANEL (hapus di production) ============ -->
+<div class="sim-panel" id="simPanel">
+  <button class="sim-toggle" id="simToggle" aria-label="Buka simulasi">
+    <i class="fa-solid fa-flask"></i>
+  </button>
+  <div class="sim-body" id="simBody" hidden>
+    <h4>Simulasi State</h4>
+    <p class="sim-hint">Buat tes tampilan. Hapus di production.</p>
+    <div class="sim-actions">
+      <button data-sim="form" type="button">Mulai</button>
+      <button data-sim="redeem-ok" type="button">Cek Kode: Valid</button>
+      <button data-sim="redeem-bad" type="button">Cek Kode: Salah</button>
+      <button data-sim="redeem-exp" type="button">Cek Kode: Expired</button>
+      <button data-sim="redeem-used" type="button">Cek Kode: Terpakai</button>
+      <button data-sim="redeem-limit" type="button">Cek Kode: Limit</button>
+      <button data-sim="payment" type="button">Pembayaran QRIS</button>
+      <button data-sim="payment-exp" type="button">QR Expired</button>
+      <button data-sim="result-wait" type="button">Hasil: Menunggu</button>
+      <button data-sim="result-ok" type="button">Hasil: Terkonfirmasi</button>
+      <button data-sim="result-reject" type="button">Hasil: Ditolak</button>
+      <button data-sim="result-expired" type="button">Hasil: Kedaluwarsa</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <div class="logo-mark">B</div>
+          <div class="logo-text">Plan<span class="b">B</span></div>
+        </a>
+        <p>Agency kreatif & akademik. Solusi ketika rencana A gagal — dan alasan kenapa rencana B jadi juara.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="layanan.html#foto">Foto & Visual</a></li>
+          <li><a href="layanan.html#website">Website</a></li>
+          <li><a href="layanan.html#skripsi">Skripsi & Karier</a></li>
+          <li><a href="layanan.html#jersey">Jersey & Apparel</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Perusahaan</h4>
+        <ul>
+          <li><a href="portofolio.html">Portofolio</a></li>
+          <li><a href="paket.html">Paket & Harga</a></li>
+          <li><a href="order.html">Order</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li><a href="mailto:hello@planb.agency">hello@planb.agency</a></li>
+          <li><a href="https://wa.me/6281234567890">+62 812-3456-7890</a></li>
+          <li><a href="#">Jakarta, Indonesia</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2025 Plan B Agency. All rights reserved.</div>
+      <div>Dibuat dengan teliti. Bukan dengan template.</div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/6281234567890?text=Halo%20Plan%20B" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/order-flow.js"></script>
+
+</body>
+</html>

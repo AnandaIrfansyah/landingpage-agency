@@ -5,7 +5,60 @@
 (function () {
   'use strict';
 
-  /* ---------- NAVBAR SCROLL EFFECT ---------- */
+  /* ============================================
+     LOADING SCREEN — tampil semua halaman
+     ============================================ */
+  (function initLoader() {
+    // Hormati prefers-reduced-motion (aksesibilitas)
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    // Buat elemen loader
+    const loader = document.createElement('div');
+    loader.className = 'pb-loader';
+    loader.setAttribute('aria-hidden', 'true');
+    loader.innerHTML = `
+      <div class="pb-loader-inner">
+        <div class="pb-loader-logo">
+          <div class="pb-loader-mark">B</div>
+        </div>
+        <div class="pb-loader-spinner"></div>
+      </div>
+    `;
+
+    // Sisipkan ke <body>
+    document.body.appendChild(loader);
+
+    // Cegah scroll saat loading
+    document.body.classList.add('pb-loading');
+
+    // Delay: 0.8 detik setelah window.load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        loader.classList.add('pb-loader-hide');
+        document.body.classList.remove('pb-loading');
+
+        setTimeout(() => {
+          if (loader.parentElement) loader.remove();
+        }, 400);
+      }, 800);
+    });
+
+    // Fallback: kalau window.load gak ke-trigger, paksa hilang setelah 2.5 detik
+    setTimeout(() => {
+      if (document.body.contains(loader) && !loader.classList.contains('pb-loader-hide')) {
+        loader.classList.add('pb-loader-hide');
+        document.body.classList.remove('pb-loading');
+        setTimeout(() => {
+          if (loader.parentElement) loader.remove();
+        }, 400);
+      }
+    }, 2500);
+  })();
+
+  /* ============================================
+     NAVBAR SCROLL EFFECT
+     ============================================ */
   const navbar = document.getElementById('nav');
   if (navbar) {
     window.addEventListener('scroll', () => {
@@ -13,7 +66,9 @@
     });
   }
 
-  /* ---------- MOBILE MENU TOGGLE ---------- */
+  /* ============================================
+     MOBILE MENU TOGGLE
+     ============================================ */
   const toggle = document.getElementById('mobileToggle');
   const navLinks = document.getElementById('navLinks');
 
@@ -40,7 +95,9 @@
     });
   }
 
-  /* ---------- REVEAL ON SCROLL ---------- */
+  /* ============================================
+     REVEAL ON SCROLL
+     ============================================ */
   const revealTargets = document.querySelectorAll(
     '.layanan-card, .kenapa-item, .porto-item, .testi-card, .aside-card, .sub-card, .process-item'
   );
@@ -61,14 +118,18 @@
     });
   }
 
-  /* ---------- SMOOTH SCROLL & CLOSE MOBILE MENU ---------- */
+  /* ============================================
+     SMOOTH SCROLL & CLOSE MOBILE MENU
+     ============================================ */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function () {
       if (navLinks) navLinks.classList.remove('open');
     });
   });
 
-  /* ---------- QUICK NAV — highlight saat scroll ---------- */
+  /* ============================================
+     QUICK NAV — highlight saat scroll
+     ============================================ */
   const quickNavLinks = document.querySelectorAll('#quickNavList a');
   const layananSections = document.querySelectorAll('.layanan-section');
 
@@ -100,9 +161,11 @@
     });
 
     layananSections.forEach(sec => navObserver.observe(sec));
-    }
-    
-      /* ---------- PAKET: TAB SWITCHER ---------- */
+  }
+
+  /* ============================================
+     PAKET: TAB SWITCHER
+     ============================================ */
   const paketTabs = document.querySelectorAll('.quick-nav-btn[data-tab]');
   const paketPanels = document.querySelectorAll('.paket-panel[data-panel]');
 
@@ -111,10 +174,8 @@
       tab.addEventListener('click', () => {
         const target = tab.dataset.tab;
 
-        // Update tab aktif
         paketTabs.forEach(t => t.classList.toggle('is-active', t === tab));
 
-        // Show panel yang sesuai
         paketPanels.forEach(panel => {
           panel.classList.toggle('is-active', panel.dataset.panel === target);
         });
@@ -122,7 +183,9 @@
     });
   }
 
-  /* ---------- FAQ ACCORDION ---------- */
+  /* ============================================
+     FAQ ACCORDION
+     ============================================ */
   const faqItems = document.querySelectorAll('.faq-item');
 
   if (faqItems.length) {
@@ -133,19 +196,16 @@
       question.addEventListener('click', () => {
         const isOpen = item.classList.contains('open');
 
-        // Tutup semua
         faqItems.forEach(i => i.classList.remove('open'));
 
-        // Buka yang diklik kalau sebelumnya tertutup
         if (!isOpen) item.classList.add('open');
       });
     });
+  }
 
-    // Auto-open yang pertama (opsional)
-    // faqItems[0].classList.add('open');
-    }
-    
-      /* ---------- PORTOFOLIO: FILTER ---------- */
+  /* ============================================
+     PORTOFOLIO: FILTER
+     ============================================ */
   const portoFilters = document.querySelectorAll('.quick-nav-btn[data-filter]');
   const portoCards = document.querySelectorAll('.porto-card');
   const portoEmpty = document.getElementById('portoEmpty');
@@ -163,23 +223,20 @@
         if (show) visibleCount++;
       });
 
-      // Tampilkan empty state kalau gak ada hasil
       if (portoEmpty) {
         portoEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
       }
 
-      // Update tab aktif
       portoFilters.forEach(btn => {
         btn.classList.toggle('is-active', btn.dataset.filter === filter);
       });
     };
 
-    // Klik tab
     portoFilters.forEach(btn => {
       btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
     });
 
-    // Cek query param ?cat=foto di URL — dipakai dari link layanan.html
+    // Query param ?cat=foto
     const params = new URLSearchParams(window.location.search);
     const catFromUrl = params.get('cat');
     if (catFromUrl) {
@@ -188,7 +245,9 @@
     }
   }
 
-  /* ---------- PORTOFOLIO: LIGHTBOX ---------- */
+  /* ============================================
+     PORTOFOLIO: LIGHTBOX
+     ============================================ */
   const lightbox = document.getElementById('lightbox');
   const lightboxClose = document.getElementById('lightboxClose');
 
@@ -208,7 +267,6 @@
       const year = card.dataset.year || '—';
       const desc = card.dataset.desc || '';
 
-      // Tag kategori
       const tagLabels = {
         foto: 'Foto & Visual',
         website: 'Website',
@@ -221,7 +279,6 @@
       if (lbYear) lbYear.textContent = year;
       if (lbDesc) lbDesc.textContent = desc;
 
-      // Copy warna dari bg card ke visual lightbox
       const bgCard = card.querySelector('.porto-card-bg');
       if (bgCard && lbVisual) {
         const colorKey = bgCard.dataset.color;
@@ -248,39 +305,20 @@
       lightboxClose.addEventListener('click', closeLightbox);
     }
 
-    // Klik area luar lightbox-inner → tutup
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();
     });
 
-    // Escape → tutup
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
         closeLightbox();
       }
     });
-    }
-    
-      /* ---------- FORM ORDER: Submit Demo ---------- */
-  const orderForm = document.getElementById('orderForm');
-  const formSuccess = document.getElementById('formSuccess');
-
-  if (orderForm && formSuccess) {
-    orderForm.addEventListener('submit', (e) => {
-      // Nanti di Laravel: hapus baris preventDefault ini
-      // biarkan form submit natural ke route
-      e.preventDefault();
-
-      // Tampilkan pesan sukses
-      orderForm.style.display = 'none';
-      formSuccess.hidden = false;
-
-      // Scroll ke pesan sukses
-      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
   }
 
-  /* ---------- STATUS HARI INI ---------- */
+  /* ============================================
+     STATUS HARI INI (kontak)
+     ============================================ */
   const todayStatus = document.getElementById('todayStatus');
 
   if (todayStatus) {
