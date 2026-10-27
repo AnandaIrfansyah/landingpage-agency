@@ -338,4 +338,144 @@
     }
   }
 
+    /* ---------- FORM TESTIMONI ---------- */
+  const testiForm = document.getElementById('testimoniForm');
+  const testiSuccess = document.getElementById('testiSuccess');
+  const btnResetForm = document.getElementById('btnResetForm');
+
+  if (testiForm && testiSuccess) {
+    testiForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      let valid = true;
+      const fields = ['nama', 'asal', 'layanan', 'pesan'];
+
+      // Clear all errors
+      fields.forEach(f => {
+        const err = document.querySelector(`[data-error="${f}"]`);
+        const input = document.getElementById(f);
+        if (err) err.classList.remove('is-visible');
+        if (input) input.classList.remove('is-invalid');
+      });
+
+      const ratingError = document.querySelector('[data-error="rating"]');
+      if (ratingError) ratingError.classList.remove('is-visible');
+
+      // Validate Text/Select
+      fields.forEach(f => {
+        const input = document.getElementById(f);
+        if (input && !input.value.trim()) {
+          const err = document.querySelector(`[data-error="${f}"]`);
+          if (err) {
+            err.textContent = 'Kolom ini wajib diisi.';
+            err.classList.add('is-visible');
+          }
+          input.classList.add('is-invalid');
+          valid = false;
+        }
+      });
+
+      // Validate Rating
+      const ratingSelected = document.querySelector('input[name="rating"]:checked');
+      if (!ratingSelected) {
+        if (ratingError) {
+          ratingError.textContent = 'Pilih rating bintang dulu ya.';
+          ratingError.classList.add('is-visible');
+        }
+        valid = false;
+      }
+
+      if (!valid) {
+        // Scroll ke error pertama
+        const firstError = testiForm.querySelector('.form-error.is-visible');
+        if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      // Simulasi kirim data ke backend
+      const btnSubmit = testiForm.querySelector('button[type="submit"]');
+      const originalText = btnSubmit.innerHTML;
+      btnSubmit.disabled = true;
+      btnSubmit.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Mengirim...';
+
+      setTimeout(() => {
+        testiForm.hidden = true;
+        testiSuccess.hidden = false;
+        btnSubmit.disabled = false;
+        btnSubmit.innerHTML = originalText;
+        
+        // Scroll ke atas form
+        testiSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 1200);
+    });
+  }
+
+  if (btnResetForm) {
+    btnResetForm.addEventListener('click', () => {
+      testiForm.reset();
+      testiForm.hidden = false;
+      testiSuccess.hidden = true;
+    });
+  }
+
+    /* ---------- TESTIMONI SLIDER (AUTO PLAY) ---------- */
+  const testiSlider = document.getElementById('testiSlider');
+  const testiPrev = document.getElementById('testiPrev');
+  const testiNext = document.getElementById('testiNext');
+
+  if (testiSlider) {
+    const scrollAmount = 350; // Jarak geser per langkah
+    let autoSlideInterval;
+
+    // Fungsi buat geser
+    const slideNext = () => {
+      // Kalau udah mentok kanan, balik ke awal (kiri)
+      if (testiSlider.scrollLeft >= (testiSlider.scrollWidth - testiSlider.clientWidth - 10)) {
+        testiSlider.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        testiSlider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    };
+
+    const slidePrev = () => {
+      testiSlider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    };
+
+    // Fungsi buat mulai auto-slide
+    const startAutoSlide = () => {
+      autoSlideInterval = setInterval(slideNext, 4000); // Geser tiap 4 detik
+    };
+
+    // Fungsi buat berhenti auto-slide
+    const stopAutoSlide = () => {
+      clearInterval(autoSlideInterval);
+    };
+
+    // Klik tombol manual (kalau ada)
+    if (testiPrev && testiNext) {
+      testiNext.addEventListener('click', () => {
+        stopAutoSlide();
+        slideNext();
+        startAutoSlide(); // Reset timer
+      });
+
+      testiPrev.addEventListener('click', () => {
+        stopAutoSlide();
+        slidePrev();
+        startAutoSlide(); // Reset timer
+      });
+    }
+
+    // Pause auto-slide kalau kursor di atas slider (Desktop)
+    testiSlider.addEventListener('mouseenter', stopAutoSlide);
+    testiSlider.addEventListener('mouseleave', startAutoSlide);
+
+    // Pause auto-slide kalau user lagi nge-swipe (Mobile)
+    testiSlider.addEventListener('touchstart', stopAutoSlide);
+    testiSlider.addEventListener('touchend', startAutoSlide);
+
+    // Mulai auto-slide pertama kali
+    startAutoSlide();
+  }
+
 })();

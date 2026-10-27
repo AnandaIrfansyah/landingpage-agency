@@ -4006,3 +4006,270 @@ a.contact-card { cursor: pointer; }
 .porto-overlay {
   z-index: 2;
 }
+
+/* ============================================
+   FORM TESTIMONI
+   ============================================ */
+.form-testi-section {
+  background: var(--bg);
+}
+
+.testi-form-wrapper {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.testi-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* Star Rating */
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse; /* Biar bintang 5 ada di kiri */
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  cursor: pointer;
+  color: var(--border-strong); /* Warna abu-abu pas belum dipilih */
+  font-size: 2rem;
+  transition: color 0.2s, transform 0.1s;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+  color: var(--accent); /* Warna Amber */
+}
+
+.star-rating label:active {
+  transform: scale(1.2);
+}
+
+/* Sukses */
+.testi-success {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.testi-success .success-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 2rem;
+  margin: 0 auto 24px;
+}
+
+.testi-success h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.testi-success p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.testi-success .success-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testi-form .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .testi-form-wrapper {
+    padding: 28px 22px;
+  }
+  .star-rating label {
+    font-size: 1.75rem;
+  }
+}
+
+/* ============================================
+   TESTIMONI (SLIDER)
+   ============================================ */
+.testi-section {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden; /* Biar gak ada scrollbar horizontal di luar */
+}
+
+/* Head Slider (Judul kiri, Panah kanan) */
+.testi-head-slider {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  text-align: left;
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+.testi-head-slider h2 {
+  margin-bottom: 8px;
+}
+.testi-head-slider p {
+  margin: 0;
+}
+
+/* Tombol Navigasi Panah */
+.testi-nav {
+  display: flex;
+  gap: 10px;
+}
+.testi-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.testi-nav-btn:hover {
+  background: var(--accent);
+  color: #0A0A0A;
+  border-color: var(--accent);
+}
+.testi-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+
+/* Area Slider */
+.testi-slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 20px; /* Ruang buat bayangan/scrollbar */
+  
+  /* Sembunyiin scrollbar bawaan browser */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.testi-slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card Testimoni */
+.testi-card {
+  /* Lebar card dikunci, di mobile jadi 85% layar */
+  flex: 0 0 calc(33.333% - 14px);
+  scroll-snap-align: start;
+  
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.testi-card:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling Bintang & Teks (Sama kayak sebelumnya) */
+.testi-stars {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 4px;
+}
+.testi-text {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  flex-grow: 1;
+  font-style: italic;
+}
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.testi-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.testi-name {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+.testi-role {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Responsive Slider */
+@media (max-width: 992px) {
+  .testi-card { flex: 0 0 calc(50% - 10px); }
+}
+
+@media (max-width: 768px) {
+  .testi-head-slider {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .testi-nav { display: none; } /* Sembunyiin panah di HP, user tinggal swipe */
+  .testi-card { 
+    flex: 0 0 85%; /* Card kerasa gede di HP */
+  }
+}

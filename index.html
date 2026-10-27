@@ -288,18 +288,32 @@
   </div>
 </section>
 
-<!-- ============ TESTIMONI ============ -->
-<section class="block section-alt">
+<!-- ============ TESTIMONI (SLIDER) ============ -->
+<section class="block testi-section">
   <div class="container">
-    <div class="section-head">
-      <span class="section-eyebrow">Testimoni</span>
-      <h2>Kata Mereka Tentang Plan B</h2>
-      <p>Bukan kami yang bilang, tapi klien yang sudah merasakan.</p>
+    
+    <div class="section-head testi-head-slider">
+      <div>
+        <span class="section-eyebrow">Testimoni</span>
+        <h2>Kata Mereka Tentang Plan B</h2>
+        <p>Bukan kami yang bilang, tapi klien yang sudah merasakan hasilnya.</p>
+      </div>
+      
+      <!-- Tombol Panah (Desktop) -->
+      <div class="testi-nav">
+        <button class="testi-nav-btn" id="testiPrev" aria-label="Sebelumnya">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button class="testi-nav-btn" id="testiNext" aria-label="Selanjutnya">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
     </div>
 
     <!-- LOOP: testimoni-item — mulai -->
-    <div class="testi-grid">
+    <div class="testi-slider" id="testiSlider">
 
+      <!-- Testimoni 1 -->
       <div class="testi-card">
         <div class="testi-stars">
           <i class="fa-solid fa-star"></i>
@@ -308,7 +322,9 @@
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
         </div>
-        <p class="testi-text">Website yang dibuat Plan B langsung naikin konversi toko kami. Prosesnya cepat, komunikatif, dan hasilnya rapi banget.</p>
+        <p class="testi-text">
+          "Website yang dibuat Plan B langsung naikin konversi toko kami. Prosesnya cepat, komunikatif, dan hasilnya rapi banget."
+        </p>
         <div class="testi-author">
           <div class="testi-avatar">R</div>
           <div>
@@ -318,15 +334,18 @@
         </div>
       </div>
 
+      <!-- Testimoni 2 -->
       <div class="testi-card">
         <div class="testi-stars">
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star-half-stroke"></i>
         </div>
-        <p class="testi-text">Dibantu olah data SPSS sampai selesai sidang. Sabar, teliti, dan paham banget apa yang dibutuhin mahasiswa tingkat akhir.</p>
+        <p class="testi-text">
+          "Dibantu olah data SPSS sampai selesai sidang. Sabar, teliti, dan paham banget apa yang dibutuhin mahasiswa tingkat akhir."
+        </p>
         <div class="testi-author">
           <div class="testi-avatar">A</div>
           <div>
@@ -336,6 +355,7 @@
         </div>
       </div>
 
+      <!-- Testimoni 3 -->
       <div class="testi-card">
         <div class="testi-stars">
           <i class="fa-solid fa-star"></i>
@@ -344,7 +364,9 @@
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
         </div>
-        <p class="testi-text">Desain jersey tim kami bikin semua orang nanya bikin di mana. Worth every rupiah, dan revisinya cepat.</p>
+        <p class="testi-text">
+          "Desain jersey tim kami bikin semua orang nanya bikin di mana. Worth every rupiah, dan revisinya cepat."
+        </p>
         <div class="testi-author">
           <div class="testi-avatar">F</div>
           <div>
@@ -354,9 +376,29 @@
         </div>
       </div>
 
+      <!-- Testimoni 4 (Buat ngetes slider) -->
+      <div class="testi-card">
+        <div class="testi-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="testi-text">
+          "Awalnya ragu bikin skripsi di luar bimbingan kampus, tapi tim Plan B bener-bener sabar ngarahin. Lulus tepat waktu!"
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div>
+            <div class="testi-name">Siti Aminah</div>
+            <div class="testi-role">Mahasiswi, Universitas Y</div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <!-- LOOP: testimoni-item — selesai -->
-
   </div>
 </section>
 
